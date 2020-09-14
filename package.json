@@ -1,0 +1,26 @@
+{
+    "name": "theme-wagaku",
+    "version": "1.0.0",
+    "categories": [
+      "Themes"
+    ],
+    "description": "",
+    "author": "",
+    "license": "MIT",  
+    "engines": { "vscode": "^1.0.0" },
+    "contributes":
+    {
+        "themes": [
+            {
+                "label": "Wagaku Dusk",
+                "uiTheme": "vs-dark",
+                "path": "./themes/wagaku-dusk-color-theme.json"
+            },
+            {
+                "label": "Wagaku Midnight",
+                "uiTheme": "vs-dark",
+                "path": "./themes/wagaku-midnight-color-theme.json"
+            }
+        ]
+    }
+}
