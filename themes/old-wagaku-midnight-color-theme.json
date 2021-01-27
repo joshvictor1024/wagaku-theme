@@ -1,5 +1,5 @@
 {
-    "name": "Wagaku Dusk",
+    "name": "Wagaku Midnight",
     "tokenColors": [
         {
             "name": "Source",
@@ -102,28 +102,7 @@
             {
                 "foreground":"#e2c200"//FE6543//fe6d44//e2c200//F3D51D
             }
-        },        
-        {
-            "name": "Markdown Header",
-            "scope": [
-                "entity.name.section",
-                "punctuation.definition.heading"
-            ],
-            "settings":
-            {
-                "foreground":"#e2c200"//e2c200//F3D51D
-            }
-        },
-        {
-            "name": "Markdown List Punctuation",
-            "scope": [
-                "meta.paragraph"
-            ],
-            "settings":
-            {
-                "foreground":"#C5ABDA"
-            }
-        },
+        }
         
         // {"name":"Built-in constant","scope":"constant.language","settings":{"foreground":"#f280d0"}},
         // {"name":"User-defined constant","scope":["constant.character","constant.other"],"settings":{"foreground":"#f280d0"}},
@@ -159,65 +138,57 @@
         //command palette text
         //terminal dropdown text
         //some other widget icons
-        "foreground":"#b1a69b",//b1a69b//9F9489//918578//84796C//acacac
+        "foreground":"#9F9489",//9F9489//918578//84796C//acacac
 
-        "focusBorder":"#6e6459",//6e6459//872130//ef0f30
-
-        "selection.background":"#8A001C",
+        "focusBorder":"#872130",//872130//ef0f30
 
         // Title bar
-        "titleBar.activeBackground":"#5A1620",//5A1620//282b25//1e211a//22251e//181a15
-        "titleBar.activeForeground":"#b1a69b",//b1a69b//8c7f72//9F9489//acacac
+        "titleBar.activeBackground":"#1e211a",//1e211a//22251e//181a15
+        "titleBar.activeForeground":"#9F9489",//8c7f72//9F9489//acacac
 
         // All Dropdown lists: title bar, editor auto-complete, etc.
-        "list.dropBackground": "#ffffff18",
         "list.hoverBackground":"#872130",
 		"list.focusBackground":"#872130",//872130
         
         // Above the editor
         "editorGroupHeader.tabsBackground":"#1e211a",
         "editorGroupHeader.noTabsBackground":"#1e211a",
-        "tab.activeBackground":"#161a11",//161a11//22251e
-        "tab.activeForeground":"#e4dad1",//e4dad1//b7b7b7//acacac   //light grey
+        "tab.activeBackground":"#22251e",
+        "tab.activeForeground":"#b7b7b7",//b7b7b7//acacac
         "tab.inactiveBackground":"#1e211a",//1e211a//26231f//242424
-        "tab.inactiveForeground":"#b1a69b",//b1a69b//9F9489//acacac
+        "tab.inactiveForeground":"#9F9489",//9F9489//acacac
         "tab.border": "#1e211a",//1e211a
+
         //"breadcrumb.background":"#1f1c1c",
         //"breadcrumb.foreground":"#e0e0e0",
 
         // Editor
-        "editor.background":"#161a11",//22251e//242720//181a15//292423//332d2b
+        "editor.background":"#22251e",//242720//181a15//292423//332d2b
         "editor.selectionBackground":"#8A001C",//8A001C
         "editor.selectionHighlightBackground":"#8A001C80",//8A001C80
         "editor.findMatchBackground":"#9C4F07",//9C4F07
         "editor.findMatchHighlightBackground":"#9C4F0780",//9C4F0780
-        "editorLineNumber.foreground":"#b43144",//b43144//872130//a7a7a7    //brighter 872130
-        "editorGroup.dropBackground": "#ffffff18",
+        "editorLineNumber.foreground":"#872130",//872130//a7a7a7
 
         "editorIndentGuide.background":"#48413b",       //indentation line//darker 9F9489
-        "editorIndentGuide.activeBackground":"#796d61", //indentation line//darker 9F9489
+        "editorIndentGuide.activeBackground":"#6b6157", //indentation line//darker 9F9489
 
         "minimap.background":"#1e211a",
 
-        "editorOverviewRuler.border":"#1e211a",//1e211a//22251e//vertical scrollbar border
+        "editorOverviewRuler.border":"#22251e",//vertical scrollbar border
         "scrollbarSlider.background":"#87213080",//57151f//872130
         "scrollbarSlider.hoverBackground":"#872130b0",//872130
         "scrollbarSlider.activeBackground":"#872130e0",//872130
-        "editor.hoverHighlightBackground": "#ffffff18",
 
-        "activityBar.background":"#161a11",//161a11//282b25//22251e//181a15//1f1c1c
-        "activityBar.activeBackground": "#1e211a",//1e211a//282b25
-        "activityBar.inactiveForeground": "#872130",
-        "activityBar.foreground":"#b43144",//b43144//aa132a//ef0f30
-        "activityBarBadge.background":"#b43144",//b43144//5A1620
-        "activityBarBadge.foreground": "#e4dad1",//e4dad1//b7b7b7//b1a69b//161a11//5dc7d6
+        "activityBar.background":"#22251e",//22251e//181a15//1f1c1c
+        "activityBar.foreground":"#ef0f30",
+        "activityBarBadge.background":"#5A1620",
         //"activityBarBadge.foreground":"#71665c",
-        //"activityBar.border": "#22251e",
         
         "sideBar.border":"#1e211a",
-        "sideBar.background":"#1e211a",//282b25//1e211a//191615
+        "sideBar.background":"#1e211a",//1e211a//191615
         //"sideBarTitle.foreground":"#872130",
-        "sideBarSectionHeader.background":"#1e211a",//1e211a//282b25//22251e//181a15//4d131c//87213080//313131
+        "sideBarSectionHeader.background":"#181a15",//4d131c//87213080//313131
         //"sideBarSectionHeader.foreground":"",
         "list.activeSelectionBackground":"#872130",
         "list.inactiveSelectionBackground":"#5A1620",
@@ -231,20 +202,18 @@
         "panel.border":"#1e211a",
         "panel.background":"#1e211a",//1e211a//211f1f
         //"panel.foreground":"#00ffff",//84796C
-        "panelTitle.activeForeground":"#b1a69b",//b1a69b//9F9489
+        "panelTitle.activeForeground":"#9F9489",
 
         // Terminal
-        "terminal.foreground":"#b1a69b",//b1a69b//9F9489//918578//84796C
-        "dropdown.foreground":"#e4dad1",//e4dad1//b7b7b7//acacac
-        "dropdown.background":"#161a11",    // visible part when not expanded//161a11//22251e//1e211a
+        "terminal.foreground":"#9F9489",//9F9489//918578//84796C
+        "dropdown.foreground":"#b7b7b7",//b7b7b7//acacac
+        "dropdown.background":"#22251e",    // visible part when not expanded//22251e//1e211a
         "dropdown.listBackground":"#22251e",// expanded part//22251e
 
         // Status bar
-        "statusBar.noFolderBackground":"#1e211a",
-        "statusBar.background":"#1e211a",//1e211a//872130//181a15//080403
-        "statusBar.foreground":"#b1a69b",//b1a69b//9F9489//f0f0f0
-        "statusBar.debuggingBackground": "#b1a69b",
-        "statusBar.debuggingForeground": "#1e211a",
+        "statusBar.background":"#181a15",//181a15//080403
+        "statusBar.foreground":"#9F9489"//9F9489//f0f0f0
+        //"statusBar.noFolderBackground":"#090a0d"
     },
     //"semanticHighlighting":true
     "semanticHighlighting":false

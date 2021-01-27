@@ -1,6 +1,6 @@
 {
     "name": "theme-wagaku",
-    "version": "1.0.0",
+    "version": "0.2.0",
     "categories": [
       "Themes"
     ],
@@ -11,11 +11,6 @@
     "contributes":
     {
         "themes": [
-            {
-                "label": "Wagaku Dusk",
-                "uiTheme": "vs-dark",
-                "path": "./themes/wagaku-dusk-color-theme.json"
-            },
             {
                 "label": "Wagaku Midnight",
                 "uiTheme": "vs-dark",
