@@ -1,15 +1,12 @@
 {
     "name": "theme-wagaku",
+    "displayName": "Theme Wagaku",
     "version": "0.2.0",
     "categories": [
-      "Themes"
+        "Themes"
     ],
-    "description": "",
-    "author": "",
-    "license": "MIT",  
-    "engines": { "vscode": "^1.0.0" },
-    "contributes":
-    {
+    "description": "Another dark theme for Visual Studio Code",
+    "contributes": {
         "themes": [
             {
                 "label": "Wagaku Midnight",
@@ -17,5 +14,29 @@
                 "path": "./themes/wagaku-midnight-color-theme.json"
             }
         ]
+    },
+    "author": "Josh Chuang",
+    "publisher": "josh-chuang",
+    "license": "MIT",
+    "engines": {
+        "vscode": "^1.52.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/joshvictor1024/wagaku-theme"
+    },
+    "galleryBanner": {
+        "color": "161a11",
+        "theme": "dark"
+    },
+    "keywords": [
+        "borderless",
+        "basic",
+        "standard",
+        "simple",
+        "clean"
+    ],
+    "dependencies": {
+        "vsce": "^1.84.0"
     }
 }
