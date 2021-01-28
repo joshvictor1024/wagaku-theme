@@ -1,42 +1,47 @@
 {
-    "name": "theme-wagaku",
-    "displayName": "Theme Wagaku",
-    "version": "0.2.0",
-    "categories": [
-        "Themes"
-    ],
-    "description": "Another dark theme for Visual Studio Code",
-    "contributes": {
-        "themes": [
-            {
-                "label": "Wagaku Midnight",
-                "uiTheme": "vs-dark",
-                "path": "./themes/wagaku-midnight-color-theme.json"
-            }
-        ]
-    },
-    "author": "Josh Chuang",
-    "publisher": "josh-chuang",
-    "license": "MIT",
-    "engines": {
-        "vscode": "^1.52.0"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/joshvictor1024/wagaku-theme"
-    },
-    "galleryBanner": {
-        "color": "161a11",
-        "theme": "dark"
-    },
-    "keywords": [
-        "borderless",
-        "basic",
-        "standard",
-        "simple",
-        "clean"
-    ],
-    "dependencies": {
-        "vsce": "^1.84.0"
-    }
+	"name": "theme-wagaku",
+	"displayName": "Theme Wagaku",
+	"version": "0.2.1",
+	"categories": [
+		"Themes"
+	],
+	"description": "Another dark theme for Visual Studio Code",
+	"contributes": {
+		"themes": [
+			{
+				"label": "Wagaku Midnight",
+				"uiTheme": "vs-dark",
+				"path": "./themes/wagaku-midnight-color-theme.json"
+			}
+		]
+	},
+	"author": "Josh Chuang",
+	"publisher": "josh-chuang",
+	"license": "MIT",
+	"engines": {
+		"vscode": "^1.52.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/joshvictor1024/wagaku-theme"
+	},
+	"galleryBanner": {
+		"color": "161a11",
+		"theme": "dark"
+	},
+	"keywords": [
+		"borderless",
+		"basic",
+		"standard",
+		"simple",
+		"clean"
+	],
+	"dependencies": {
+		"vsce": "^1.84.0"
+	},
+	"__metadata": {
+		"id": "ddfcd9a4-e476-4090-984c-30da74b216c9",
+		"publisherDisplayName": "Josh Chuang",
+		"publisherId": "389aaa02-136a-45a5-96cf-1ebeea57dcef"
+	}
 }

@@ -15,17 +15,29 @@ const DARK_2 = "#404533"//36382B//36342B//22251e
 const LIGHT_0 = "#E0E2DF"//f0f0f0//b1a69b
 const LIGHT_1 = "#ffffff"//e4dad1
 
-const transparent = [
-    "1b", "80", "b0", "e8",
+const TRANSPARENCY = [
+    "1b", "30", "68", "80", "b0",
 ]
+
+const SCROLLBAR_PRESENT = TRANSPARENCY[2]
+const SCROLLBAR_HOVER = TRANSPARENCY[3]
+const SCROLLBAR_ACTIVE = TRANSPARENCY[4]
+const DROP = TRANSPARENCY[3]
+const GUTTER = TRANSPARENCY[4]
+const MINOR_HIGHLIGHT = TRANSPARENCY[0]
+const INACTIVE_HIGHLIGHT = TRANSPARENCY[3]
+const ACTIVE_HIGHLIGHT = TRANSPARENCY[4]
+const DIFF_HIGHLIGHT = TRANSPARENCY[1]
 
 const ACCENT = RED_0
 const ACCENT_BRIGHT = RED_1
 const ERROR = LIGHT_RED;
-const SELECTION = RED_0 + transparent[3]
-const SELECTION_HIGHLIGHT = RED_0 + transparent[1]
-const FIND_MATCH = ORANGE + transparent[3]
-const FIND_MATCH_HIGHLIGHT = ORANGE + transparent[1]
+const SELECTION = RED_0;
+const FIND_MATCH = ORANGE
+const GIT_ADDED = AQUA
+const GIT_MODIFIED = YELLOW
+const GIT_DELETED = LIGHT_RED
+const GIT_IGNORED = OLIVE
 
 const tokenColors = [
     {
@@ -197,7 +209,7 @@ const colors = {
 
     "focusBorder": OLIVE,//GRAY_1,//6e6459//872130//ef0f30
 
-    "selection.background": SELECTION,
+    "selection.background": SELECTION + ACTIVE_HIGHLIGHT,
 
     // Title bar
     "titleBar.activeBackground": ACCENT,//5A1620//282b25//1e211a//22251e//181a15
@@ -215,11 +227,20 @@ const colors = {
     //"checkbox.border": Border color of checkbox widget,
 
     // All Dropdown lists: title bar, editor auto-complete, etc.
-    "list.dropBackground": DARK_0 + transparent[1],
+    "list.dropBackground": DARK_0 + DROP,
     "list.hoverBackground": ACCENT,
     "list.focusBackground": ACCENT,//872130
     //"list.deemphasizedForeground": LIGHT_1,//872130
     //"list.errorForeground": ERROR,
+
+    // Context menu
+    "menu.separatorBackground": OLIVE,
+    "menu.border": LIGHT_0,
+
+    // Command palette, etc.
+    //"pickerGroup.border": "#ff66ff",
+    "quickInput.background": DARK_0,
+    "pickerGroup.foreground": LIGHT_0,
 
     // Above the editor
     "editorGroupHeader.tabsBackground": DARK_1,
@@ -233,35 +254,45 @@ const colors = {
     //"breadcrumb.foreground":"#e0e0e0",
 
     // Editor
-    "editor.background": DARK_0,
-    "editorCursor.foreground": LIGHT_0,
-    "editorBracketMatch.background": ACCENT + transparent[1],//RED_0,
-    "editorBracketMatch.border": ACCENT_BRIGHT,
     "editorLineNumber.foreground": ACCENT,//b43144//872130//a7a7a7    //brighter 872130
     "editorLineNumber.activeForeground": ACCENT_BRIGHT,
-    "editorGroup.dropBackground": DARK_1 + transparent[1],
+    "editorGutter.addedBackground": GIT_ADDED + GUTTER,
+    "editorGutter.modifiedBackground": GIT_MODIFIED + GUTTER,
+    "editorGutter.deletedBackground": GIT_DELETED + GUTTER,
+
+    "editor.background": DARK_0,
+    "editorCursor.foreground": LIGHT_0,
+    "editorBracketMatch.background": ACCENT + MINOR_HIGHLIGHT,//RED_0,
+    "editorBracketMatch.border": ACCENT_BRIGHT,
+    "editorGroup.dropBackground": DARK_1 + DROP,
     "editorIndentGuide.background": DARK_2,       //indentation line//darker 9F9489
     "editorIndentGuide.activeBackground": OLIVE, //indentation line//darker 9F9489
     //"editorError.foreground": ERROR,
 
-    "editor.wordHighlightBackground": LIGHT_0 + transparent[0], // read
-    "editor.wordHighlightStrongBackground": LIGHT_0 + transparent[0], // write
-    "editor.selectionBackground": SELECTION,//8A001C
-    "editor.selectionHighlightBackground": SELECTION_HIGHLIGHT,//8A001C80
-    "editor.findMatchBackground": FIND_MATCH,//9C4F07
-    "editor.findMatchHighlightBackground": FIND_MATCH_HIGHLIGHT,//9C4F0780
+    "editor.wordHighlightBackground": LIGHT_0 + MINOR_HIGHLIGHT, // read
+    "editor.wordHighlightStrongBackground": LIGHT_0 + MINOR_HIGHLIGHT, // write
+    "editor.selectionBackground": SELECTION + ACTIVE_HIGHLIGHT,//8A001C
+    "editor.selectionHighlightBackground": SELECTION + INACTIVE_HIGHLIGHT,//8A001C80
+    "editor.findMatchBackground": FIND_MATCH + ACTIVE_HIGHLIGHT,//9C4F07
+    "editor.findMatchHighlightBackground": FIND_MATCH + INACTIVE_HIGHLIGHT,//9C4F0780
 
     "minimap.background": DARK_1,
-    "minimap.selectionHighlight": SELECTION,
-    "minimap.findMatchHighlight": FIND_MATCH,
+    "minimapSlider.background": ACCENT + SCROLLBAR_HOVER,
+    "minimapSlider.hoverBackground": ACCENT + SCROLLBAR_HOVER,
+    "minimapSlider.activeBackground": ACCENT + SCROLLBAR_ACTIVE,
+    "minimap.selectionHighlight": SELECTION + ACTIVE_HIGHLIGHT,
+    "minimap.findMatchHighlight": FIND_MATCH + ACTIVE_HIGHLIGHT,
     //"minimap.errorHighlight": ERROR,
+    "minimapGutter.addedBackground": GIT_ADDED + GUTTER,
+    "minimapGutter.modifiedBackground": GIT_MODIFIED + GUTTER,
+    "minimapGutter.deletedBackground:": GIT_DELETED + GUTTER,
 
     "editorOverviewRuler.border": DARK_1,//1e211a//22251e//vertical scrollbar border
     //"editorOverviewRuler.errorForeground": ERROR,
-    "scrollbarSlider.background": ACCENT + transparent[1],//57151f//872130
-    "scrollbarSlider.hoverBackground": ACCENT + transparent[2],//872130
-    "scrollbarSlider.activeBackground": ACCENT + transparent[3],//872130
-    "editor.hoverHighlightBackground": DARK_0 + transparent[1],
+    "scrollbarSlider.background": ACCENT + SCROLLBAR_PRESENT,//57151f//872130
+    "scrollbarSlider.hoverBackground": ACCENT + SCROLLBAR_HOVER,//872130
+    "scrollbarSlider.activeBackground": ACCENT + SCROLLBAR_ACTIVE,//872130
+    //"editor.hoverHighlightBackground": DARK_0 + CLEARLY_VISIBLE,
 
     "activityBar.background": DARK_0,//161a11//282b25//22251e//181a15//1f1c1c
     "activityBar.activeBackground": DARK_1,//1e211a//282b25
@@ -277,8 +308,8 @@ const colors = {
     //"sideBarTitle.foreground":"#872130",
     "sideBarSectionHeader.background": DARK_1,//1e211a//282b25//22251e//181a15//4d131c//87213080//313131
     //"sideBarSectionHeader.foreground":"",
-    "list.activeSelectionBackground": SELECTION,
-    "list.inactiveSelectionBackground": SELECTION,
+    "list.activeSelectionBackground": SELECTION + ACTIVE_HIGHLIGHT,
+    "list.inactiveSelectionBackground": SELECTION + ACTIVE_HIGHLIGHT,
 
     // "n UNSAVED" badge of sideBarSectionHeader
     // "n Settings Found" badge of Settings (UI) search
@@ -292,10 +323,10 @@ const colors = {
     //"panelTitle.activeForeground": "#ff00ff",//LIGHT_0,//b1a69b//9F9489
 
     // Terminal
-    "terminal.foreground": LIGHT_0,//b1a69b//9F9489//918578//84796C
-    "dropdown.foreground": LIGHT_0,//e4dad1//b7b7b7//acacac
+    //"terminal.foreground": LIGHT_0,//b1a69b//9F9489//918578//84796C
+    //"dropdown.foreground": LIGHT_0,//e4dad1//b7b7b7//acacac
     "dropdown.background": DARK_0,    // visible part when not expanded//161a11//22251e//1e211a
-    "dropdown.listBackground": DARK_0,// expanded part//22251e
+    //"dropdown.listBackground": DARK_0,// expanded part//22251e
 
     // Status bar
     "statusBar.noFolderBackground": DARK_1,
@@ -304,11 +335,24 @@ const colors = {
     "statusBar.debuggingBackground": LIGHT_0,
     "statusBar.debuggingForeground": DARK_1,
 
+    // Git
+    "gitDecoration.untrackedResourceForeground": GIT_ADDED,
+    "gitDecoration.addedResourceForeground": GIT_ADDED,
+    "gitDecoration.modifiedResourceForeground": GIT_MODIFIED,
+    "gitDecoration.stageModifiedResourceForeground": GIT_MODIFIED,
+    "gitDecoration.deletedResourceForeground": GIT_DELETED,
+    "gitDecoration.stageDeletedResourceForeground": GIT_DELETED,
+    "gitDecoration.ignoredResourceForeground": GIT_IGNORED,
+
+    "diffEditor.insertedTextBackground": GIT_ADDED + DIFF_HIGHLIGHT,
+    "diffEditor.removedTextBackground": GIT_DELETED + DIFF_HIGHLIGHT,
+    "diffEditor.diagonalFill": DARK_1,
+
     // Settings
     "settings.modifiedItemIndicator": ACCENT,
 }
 
-const outFile = "../themes/wagaku-midnight-color-theme.json"
+const outFile = "themes/wagaku-midnight-color-theme.json"
 const all = {
     "name": "Wagaku Test",
     "tokenColors": tokenColors,

@@ -12,6 +12,11 @@ run `node ./build.js` (Node.js required)
 
 ## Version
 
+#### 0.2.1
+
+- Add git colors, diff colors
+- Tweak transparency
+
 #### 0.2.0
 
 - Add script for building
