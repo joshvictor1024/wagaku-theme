@@ -2,21 +2,22 @@ const BONE = "#E5D7D8"//E5D7D8//eed6d7
 const OLIVE = "#919985"//919985//94a17d
 const LIGHT_OLIVE = "#D2D4CE"//D2D4CE//D7D9D3
 const MANDARIN = "#ED755A"//ED755A//EE7C63//F46C4E//fe6543
-const YELLOW = "#e2c200"
+const YELLOW = "#E2C200"
 const AQUA = "#69D4E2"//69D4E2//5dc7d6
 const LILAC = "#D5C2E5"//c5abda
 const RED_0 = "#960E27"//872130
 const RED_1 = "#CD1335"//b43144
 const LIGHT_RED = "#FF94A4"//FF94A4//ff889a
 const ORANGE = "#EA940B"//EA940B//9c4f07
-const DARK_0 = "#161a11"//161B11//161a11
+const DARK_0 = "#161A11"//161B11//161a11
 const DARK_1 = "#2B3022"//262A1E//26271E//1e211a
 const DARK_2 = "#404533"//36382B//36342B//22251e
+const DARK_3 = OLIVE
 const LIGHT_0 = "#E0E2DF"//f0f0f0//b1a69b
-const LIGHT_1 = "#ffffff"//e4dad1
+const LIGHT_1 = "#FFFFFF"//e4dad1
 
 const TRANSPARENCY = [
-    "1b", "30", "68", "80", "b0",
+    "1B", "30", "68", "80", "B0",
 ]
 
 const SCROLLBAR_PRESENT = TRANSPARENCY[2]
@@ -37,7 +38,7 @@ const FIND_MATCH = ORANGE
 const GIT_ADDED = AQUA
 const GIT_MODIFIED = YELLOW
 const GIT_DELETED = LIGHT_RED
-const GIT_IGNORED = OLIVE
+const GIT_IGNORED = DARK_3
 
 const tokenColors = [
     {
@@ -206,14 +207,12 @@ const colors = {
     // some other widget icons
     "foreground": LIGHT_0,
     "errorForeground": ERROR,
-
-    "focusBorder": OLIVE,//GRAY_1,//6e6459//872130//ef0f30
-
+    "focusBorder": DARK_3,
     "selection.background": SELECTION + ACTIVE_HIGHLIGHT,
 
     // Title bar
-    "titleBar.activeBackground": ACCENT,//5A1620//282b25//1e211a//22251e//181a15
-    "titleBar.activeForeground": LIGHT_0,//b1a69b//8c7f72//9F9489//acacac
+    "titleBar.activeBackground": ACCENT,
+    "titleBar.activeForeground": LIGHT_0,
 
     // Button
     "button.background": ACCENT,
@@ -229,12 +228,12 @@ const colors = {
     // All Dropdown lists: title bar, editor auto-complete, etc.
     "list.dropBackground": DARK_0 + DROP,
     "list.hoverBackground": ACCENT,
-    "list.focusBackground": ACCENT,//872130
-    //"list.deemphasizedForeground": LIGHT_1,//872130
+    "list.focusBackground": ACCENT,
+    //"list.deemphasizedForeground": LIGHT_1,
     //"list.errorForeground": ERROR,
 
     // Context menu
-    "menu.separatorBackground": OLIVE,
+    "menu.separatorBackground": DARK_3,
     "menu.border": LIGHT_0,
 
     // Command palette, etc.
@@ -245,16 +244,16 @@ const colors = {
     // Above the editor
     "editorGroupHeader.tabsBackground": DARK_1,
     "editorGroupHeader.noTabsBackground": DARK_1,
-    "tab.activeBackground": DARK_0,//161a11//22251e
-    "tab.activeForeground": LIGHT_0,//e4dad1//b7b7b7//acacac   //light grey
-    "tab.inactiveBackground": DARK_1,//1e211a//26231f//242424
-    "tab.inactiveForeground": LIGHT_0,//b1a69b//9F9489//acacac
+    "tab.activeBackground": DARK_0,
+    "tab.activeForeground": LIGHT_0,
+    "tab.inactiveBackground": DARK_1,
+    "tab.inactiveForeground": LIGHT_0,
     "tab.border": DARK_1,//1e211a
     //"breadcrumb.background":"#1f1c1c",
     //"breadcrumb.foreground":"#e0e0e0",
 
     // Editor
-    "editorLineNumber.foreground": ACCENT,//b43144//872130//a7a7a7    //brighter 872130
+    "editorLineNumber.foreground": ACCENT,
     "editorLineNumber.activeForeground": ACCENT_BRIGHT,
     "editorGutter.addedBackground": GIT_ADDED + GUTTER,
     "editorGutter.modifiedBackground": GIT_MODIFIED + GUTTER,
@@ -262,19 +261,20 @@ const colors = {
 
     "editor.background": DARK_0,
     "editorCursor.foreground": LIGHT_0,
-    "editorBracketMatch.background": ACCENT + MINOR_HIGHLIGHT,//RED_0,
+    "editorBracketMatch.background": ACCENT + MINOR_HIGHLIGHT,
     "editorBracketMatch.border": ACCENT_BRIGHT,
     "editorGroup.dropBackground": DARK_1 + DROP,
-    "editorIndentGuide.background": DARK_2,       //indentation line//darker 9F9489
-    "editorIndentGuide.activeBackground": OLIVE, //indentation line//darker 9F9489
+    "editorIndentGuide.background": DARK_2,
+    "editorIndentGuide.activeBackground": DARK_3,
     //"editorError.foreground": ERROR,
 
+    "editor.hoverHighlightBackground": LIGHT_0 + MINOR_HIGHLIGHT,
     "editor.wordHighlightBackground": LIGHT_0 + MINOR_HIGHLIGHT, // read
     "editor.wordHighlightStrongBackground": LIGHT_0 + MINOR_HIGHLIGHT, // write
-    "editor.selectionBackground": SELECTION + ACTIVE_HIGHLIGHT,//8A001C
-    "editor.selectionHighlightBackground": SELECTION + INACTIVE_HIGHLIGHT,//8A001C80
-    "editor.findMatchBackground": FIND_MATCH + ACTIVE_HIGHLIGHT,//9C4F07
-    "editor.findMatchHighlightBackground": FIND_MATCH + INACTIVE_HIGHLIGHT,//9C4F0780
+    "editor.selectionBackground": SELECTION + ACTIVE_HIGHLIGHT,
+    "editor.selectionHighlightBackground": SELECTION + INACTIVE_HIGHLIGHT,
+    "editor.findMatchBackground": FIND_MATCH + ACTIVE_HIGHLIGHT,
+    "editor.findMatchHighlightBackground": FIND_MATCH + INACTIVE_HIGHLIGHT,
 
     "minimap.background": DARK_1,
     "minimapSlider.background": ACCENT + SCROLLBAR_HOVER,
@@ -285,53 +285,48 @@ const colors = {
     //"minimap.errorHighlight": ERROR,
     "minimapGutter.addedBackground": GIT_ADDED + GUTTER,
     "minimapGutter.modifiedBackground": GIT_MODIFIED + GUTTER,
-    "minimapGutter.deletedBackground:": GIT_DELETED + GUTTER,
+    //"minimapGutter.deletedBackground:": GIT_DELETED + GUTTER,
 
-    "editorOverviewRuler.border": DARK_1,//1e211a//22251e//vertical scrollbar border
+    "editorOverviewRuler.border": DARK_1, // vertical scrollbar border
     //"editorOverviewRuler.errorForeground": ERROR,
-    "scrollbarSlider.background": ACCENT + SCROLLBAR_PRESENT,//57151f//872130
-    "scrollbarSlider.hoverBackground": ACCENT + SCROLLBAR_HOVER,//872130
-    "scrollbarSlider.activeBackground": ACCENT + SCROLLBAR_ACTIVE,//872130
-    //"editor.hoverHighlightBackground": DARK_0 + CLEARLY_VISIBLE,
+    "scrollbarSlider.background": ACCENT + SCROLLBAR_PRESENT,
+    "scrollbarSlider.hoverBackground": ACCENT + SCROLLBAR_HOVER,
+    "scrollbarSlider.activeBackground": ACCENT + SCROLLBAR_ACTIVE,
 
-    "activityBar.background": DARK_0,//161a11//282b25//22251e//181a15//1f1c1c
-    "activityBar.activeBackground": DARK_1,//1e211a//282b25
+    "activityBar.background": DARK_0,
+    "activityBar.activeBackground": DARK_1,
     "activityBar.inactiveForeground": ACCENT,
-    "activityBar.foreground": ACCENT_BRIGHT,//b43144//aa132a//ef0f30
-    "activityBarBadge.background": ACCENT_BRIGHT,//b43144//5A1620
-    "activityBarBadge.foreground": LIGHT_1,//e4dad1//b7b7b7//b1a69b//161a11//5dc7d6
+    "activityBar.foreground": ACCENT_BRIGHT,
+    "activityBarBadge.background": ACCENT_BRIGHT,
+    "activityBarBadge.foreground": LIGHT_1,
     //"activityBarBadge.foreground":"#71665c",
     //"activityBar.border": "#22251e",
 
     "sideBar.border": DARK_1,
-    "sideBar.background": DARK_1,//282b25//1e211a//191615
-    //"sideBarTitle.foreground":"#872130",
-    "sideBarSectionHeader.background": DARK_1,//1e211a//282b25//22251e//181a15//4d131c//87213080//313131
-    //"sideBarSectionHeader.foreground":"",
+    "sideBar.background": DARK_1,
+    "sideBarSectionHeader.background": DARK_1,
+    //"sideBarSectionHeader.foreground": "",
     "list.activeSelectionBackground": SELECTION + ACTIVE_HIGHLIGHT,
     "list.inactiveSelectionBackground": SELECTION + ACTIVE_HIGHLIGHT,
 
     // "n UNSAVED" badge of sideBarSectionHeader
     // "n Settings Found" badge of Settings (UI) search
-    "badge.background": DARK_1,//1e211a
-    //"badge.foreground": GRAY_WARM,//9F9489//71665c
+    "badge.background": DARK_1,
+    //"badge.foreground": LIGHT_0,
 
     // Panel
     "panel.border": DARK_1,
-    "panel.background": DARK_1,//DARK_1,//1e211a//211f1f
-    //"panel.foreground":"#00ffff",//84796C
-    //"panelTitle.activeForeground": "#ff00ff",//LIGHT_0,//b1a69b//9F9489
+    "panel.background": DARK_1,
 
     // Terminal
-    //"terminal.foreground": LIGHT_0,//b1a69b//9F9489//918578//84796C
-    //"dropdown.foreground": LIGHT_0,//e4dad1//b7b7b7//acacac
-    "dropdown.background": DARK_0,    // visible part when not expanded//161a11//22251e//1e211a
-    //"dropdown.listBackground": DARK_0,// expanded part//22251e
+    //"terminal.foreground": LIGHT_0,
+    //"dropdown.foreground": LIGHT_0,
+    "dropdown.background": DARK_0, // visible part when not expanded
 
     // Status bar
     "statusBar.noFolderBackground": DARK_1,
-    "statusBar.background": DARK_1,//1e211a//872130//181a15//080403
-    "statusBar.foreground": LIGHT_0,//b1a69b//9F9489//f0f0f0
+    "statusBar.background": DARK_1,
+    "statusBar.foreground": LIGHT_0,
     "statusBar.debuggingBackground": LIGHT_0,
     "statusBar.debuggingForeground": DARK_1,
 
