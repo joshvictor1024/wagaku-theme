@@ -1,1 +1,9 @@
 *.vsix
+
+# source for screenshots
+*.h
+*.cpp
+*.py
+
+# Who would've thought you'd see paint.net here
+*.pdn
