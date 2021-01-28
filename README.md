@@ -5,6 +5,8 @@ A minimally colorful theme. Inspired by the album art of Yoen Waso Emaki (妖艶
 - [album official site](https://avex.jp/yoen/)
 - [album art original artist (pixiv)](https://www.pixiv.net/users/708358)
 
+Mainly for my own C/C++ programming.
+
 ## Screenshots
 
 - Font: [Hack](https://sourcefoundry.org/hack/) 13px
@@ -20,10 +22,9 @@ A minimally colorful theme. Inspired by the album art of Yoen Waso Emaki (妖艶
 
 ## Features
 
-- Mainly for C/C++ programming
-- Your standard white text on black background (for the most part)
-- No gazillion syntax colors
-- Red as main accent color; low on blue
+- Your standard more-or-less neutral white text on black background
+- No gazillion syntax colors, just 4
+- Red as main accent color, low on blue
 
 ## Build
 
