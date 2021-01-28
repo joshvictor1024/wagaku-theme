@@ -1,3 +1,10 @@
+#### 0.2.2
+
+- Improved Python, Markdown support
+- Dim menu border color
+- Boost indent guide color
+- Fix folded code color
+
 #### 0.2.1
 
 - Add git colors, diff colors

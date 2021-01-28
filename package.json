@@ -1,7 +1,7 @@
 {
 	"name": "theme-wagaku",
 	"displayName": "Theme Wagaku",
-	"version": "0.2.1",
+	"version": "0.2.2",
 	"categories": [
 		"Themes"
 	],
@@ -30,11 +30,12 @@
 		"theme": "dark"
 	},
 	"keywords": [
-		"borderless",
-		"basic",
 		"standard",
 		"simple",
-		"clean"
+		"clean",
+		"red",
+		"cpp",
+		"C++"
 	],
 	"dependencies": {
 		"vsce": "^1.84.0"

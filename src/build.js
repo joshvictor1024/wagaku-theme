@@ -12,7 +12,6 @@ const ORANGE = "#EA940B"//EA940B//9c4f07
 const DARK_0 = "#161A11"//161B11//161a11
 const DARK_1 = "#2B3022"//262A1E//26271E//1e211a
 const DARK_2 = "#404533"//36382B//36342B//22251e
-const DARK_3 = OLIVE
 const LIGHT_0 = "#E0E2DF"//f0f0f0//b1a69b
 const LIGHT_1 = "#FFFFFF"//e4dad1
 
@@ -32,13 +31,14 @@ const DIFF_HIGHLIGHT = TRANSPARENCY[1]
 
 const ACCENT = RED_0
 const ACCENT_BRIGHT = RED_1
+const BORDER = OLIVE
 const ERROR = LIGHT_RED;
 const SELECTION = RED_0;
 const FIND_MATCH = ORANGE
 const GIT_ADDED = AQUA
 const GIT_MODIFIED = YELLOW
 const GIT_DELETED = LIGHT_RED
-const GIT_IGNORED = DARK_3
+const GIT_IGNORED = OLIVE
 
 const tokenColors = [
     {
@@ -46,6 +46,9 @@ const tokenColors = [
         "scope": [
             "source",
             "entity.name.function.call.initializer",// member name of class member initialization list
+            
+            // markdown
+            "meta.paragraph"
         ],
         "settings":
         {
@@ -94,7 +97,11 @@ const tokenColors = [
 
             "meta.preprocessor",// "once" of "pragma once"
             "punctuation.definition.directive",// "#" of preprocessor directive
-            "entity.name.function.preprocessor"//macro function
+            "entity.name.function.preprocessor",//macro function
+
+            // python
+            "variable.language.special.self",
+            "variable.parameter.function.language.special.self",
         ],
         "settings":
         {
@@ -103,13 +110,16 @@ const tokenColors = [
     },
     {
         "name": "Type: class and struct",
+        "scope": [
+            "entity.name.type",
+
+            // python
+            "support.type.python",
+        ],
         "settings":
         {
             "foreground": MANDARIN
-        },
-        "scope": [
-            "entity.name.type"
-        ]
+        }
     },
     {
         "name": "Function",
@@ -131,11 +141,25 @@ const tokenColors = [
             "string",
             "constant.character",
             "constant.other.placeholder",//"%d" of printf
-            "punctuation.definition.string"// "<>" of preprocessor directive
+            "punctuation.definition.string",// "<>" of preprocessor directive
+
+            // markdown
+            "markup.inline.raw.string",
+            "punctuation.definition.raw",//"`" of inline raw string
         ],
         "settings":
         {
             "foreground": LILAC
+        }
+    },
+    {
+        "name": "Python decorators",
+        "scope": [
+            "punctuation.definition.decorator",
+        ],
+        "settings":
+        {
+            "foreground": MANDARIN
         }
     },
     {
@@ -161,13 +185,13 @@ const tokenColors = [
         }
     },
     {
-        "name": "Markdown List Punctuation",
+        "name": "Markdown fenced block language",
         "scope": [
-            "meta.paragraph"
+            "fenced_code.block.language"
         ],
         "settings":
         {
-            "foreground": LILAC
+            "foreground": AQUA
         }
     },
 
@@ -207,7 +231,7 @@ const colors = {
     // some other widget icons
     "foreground": LIGHT_0,
     "errorForeground": ERROR,
-    "focusBorder": DARK_3,
+    "focusBorder": BORDER,
     "selection.background": SELECTION + ACTIVE_HIGHLIGHT,
 
     // Title bar
@@ -233,8 +257,8 @@ const colors = {
     //"list.errorForeground": ERROR,
 
     // Context menu
-    "menu.separatorBackground": DARK_3,
-    "menu.border": LIGHT_0,
+    "menu.separatorBackground": BORDER,
+    "menu.border": BORDER,
 
     // Command palette, etc.
     //"pickerGroup.border": "#ff66ff",
@@ -264,8 +288,8 @@ const colors = {
     "editorBracketMatch.background": ACCENT + MINOR_HIGHLIGHT,
     "editorBracketMatch.border": ACCENT_BRIGHT,
     "editorGroup.dropBackground": DARK_1 + DROP,
-    "editorIndentGuide.background": DARK_2,
-    "editorIndentGuide.activeBackground": DARK_3,
+    "editorIndentGuide.background": BORDER + INACTIVE_HIGHLIGHT,
+    "editorIndentGuide.activeBackground": BORDER,
     //"editorError.foreground": ERROR,
 
     "editor.hoverHighlightBackground": LIGHT_0 + MINOR_HIGHLIGHT,
@@ -275,6 +299,7 @@ const colors = {
     "editor.selectionHighlightBackground": SELECTION + INACTIVE_HIGHLIGHT,
     "editor.findMatchBackground": FIND_MATCH + ACTIVE_HIGHLIGHT,
     "editor.findMatchHighlightBackground": FIND_MATCH + INACTIVE_HIGHLIGHT,
+    "editor.foldBackground": LIGHT_0 + MINOR_HIGHLIGHT,
 
     "minimap.background": DARK_1,
     "minimapSlider.background": ACCENT + SCROLLBAR_HOVER,
@@ -322,6 +347,7 @@ const colors = {
     //"terminal.foreground": LIGHT_0,
     //"dropdown.foreground": LIGHT_0,
     "dropdown.background": DARK_0, // visible part when not expanded
+    "dropdown.listBackground": DARK_0,
 
     // Status bar
     "statusBar.noFolderBackground": DARK_1,

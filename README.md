@@ -7,9 +7,16 @@ A minimally colorful theme. Inspired by the album art of Yoen Waso Emaki (妖艶
 
 ## Screenshots
 
+- Font: [Hack](https://sourcefoundry.org/hack/) 13px
+- Platform: Windows 10 (125% display scaling)
+
 #### C++
 
 ![cpp.png](screenshot/cpp.png "C++")
+
+#### Python
+
+![py.png](screenshot/py.png "Python")
 
 ## Features
 

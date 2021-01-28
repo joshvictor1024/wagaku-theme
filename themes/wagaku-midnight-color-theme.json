@@ -5,7 +5,8 @@
             "name": "Source",
             "scope": [
                 "source",
-                "entity.name.function.call.initializer"
+                "entity.name.function.call.initializer",
+                "meta.paragraph"
             ],
             "settings": {
                 "foreground": "#E5D7D8"
@@ -48,7 +49,9 @@
                 "entity.other.attribute",
                 "meta.preprocessor",
                 "punctuation.definition.directive",
-                "entity.name.function.preprocessor"
+                "entity.name.function.preprocessor",
+                "variable.language.special.self",
+                "variable.parameter.function.language.special.self"
             ],
             "settings": {
                 "foreground": "#69D4E2"
@@ -56,12 +59,13 @@
         },
         {
             "name": "Type: class and struct",
+            "scope": [
+                "entity.name.type",
+                "support.type.python"
+            ],
             "settings": {
                 "foreground": "#ED755A"
-            },
-            "scope": [
-                "entity.name.type"
-            ]
+            }
         },
         {
             "name": "Function",
@@ -82,10 +86,21 @@
                 "string",
                 "constant.character",
                 "constant.other.placeholder",
-                "punctuation.definition.string"
+                "punctuation.definition.string",
+                "markup.inline.raw.string",
+                "punctuation.definition.raw"
             ],
             "settings": {
                 "foreground": "#D5C2E5"
+            }
+        },
+        {
+            "name": "Python decorators",
+            "scope": [
+                "punctuation.definition.decorator"
+            ],
+            "settings": {
+                "foreground": "#ED755A"
             }
         },
         {
@@ -109,12 +124,12 @@
             }
         },
         {
-            "name": "Markdown List Punctuation",
+            "name": "Markdown fenced block language",
             "scope": [
-                "meta.paragraph"
+                "fenced_code.block.language"
             ],
             "settings": {
-                "foreground": "#D5C2E5"
+                "foreground": "#69D4E2"
             }
         }
     ],
@@ -130,7 +145,7 @@
         "list.hoverBackground": "#960E27",
         "list.focusBackground": "#960E27",
         "menu.separatorBackground": "#919985",
-        "menu.border": "#E0E2DF",
+        "menu.border": "#919985",
         "quickInput.background": "#161A11",
         "pickerGroup.foreground": "#E0E2DF",
         "editorGroupHeader.tabsBackground": "#2B3022",
@@ -150,7 +165,7 @@
         "editorBracketMatch.background": "#960E271B",
         "editorBracketMatch.border": "#CD1335",
         "editorGroup.dropBackground": "#2B302280",
-        "editorIndentGuide.background": "#404533",
+        "editorIndentGuide.background": "#91998580",
         "editorIndentGuide.activeBackground": "#919985",
         "editor.hoverHighlightBackground": "#E0E2DF1B",
         "editor.wordHighlightBackground": "#E0E2DF1B",
@@ -159,6 +174,7 @@
         "editor.selectionHighlightBackground": "#960E2780",
         "editor.findMatchBackground": "#EA940BB0",
         "editor.findMatchHighlightBackground": "#EA940B80",
+        "editor.foldBackground": "#E0E2DF1B",
         "minimap.background": "#2B3022",
         "minimapSlider.background": "#960E2780",
         "minimapSlider.hoverBackground": "#960E2780",
@@ -186,6 +202,7 @@
         "panel.border": "#2B3022",
         "panel.background": "#2B3022",
         "dropdown.background": "#161A11",
+        "dropdown.listBackground": "#161A11",
         "statusBar.noFolderBackground": "#2B3022",
         "statusBar.background": "#2B3022",
         "statusBar.foreground": "#E0E2DF",
