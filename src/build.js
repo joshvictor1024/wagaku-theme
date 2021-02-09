@@ -4,9 +4,9 @@ const LIGHT_OLIVE = "#D2D4CE"//D2D4CE//D7D9D3
 const MANDARIN = "#ED755A"//ED755A//EE7C63//F46C4E//fe6543
 const YELLOW = "#E2C200"
 const AQUA = "#69D4E2"//69D4E2//5dc7d6
-const LILAC = "#D5C2E5"//c5abda
+const LILAC = "#d1bae5"//c5abda
 const RED_0 = "#960E27"//872130
-const RED_1 = "#CD1335"//b43144
+const RED_1 = "#e21339"//b43144
 const LIGHT_RED = "#FF94A4"//FF94A4//ff889a
 const ORANGE = "#EA940B"//EA940B//9c4f07
 const DARK_0 = "#161A11"//161B11//161a11
@@ -27,6 +27,7 @@ const GUTTER = TRANSPARENCY[4]
 const MINOR_HIGHLIGHT = TRANSPARENCY[0]
 const INACTIVE_HIGHLIGHT = TRANSPARENCY[3]
 const ACTIVE_HIGHLIGHT = TRANSPARENCY[4]
+const PEEK_HIGHLIGHT = TRANSPARENCY[0]
 const DIFF_HIGHLIGHT = TRANSPARENCY[1]
 
 const ACCENT = RED_0
@@ -46,6 +47,7 @@ const tokenColors = [
         "scope": [
             "source",
             "entity.name.function.call.initializer",// member name of class member initialization list
+            "entity.name.type.parameter.cpp", // enum member as default argument
             
             // markdown
             "meta.paragraph"
@@ -283,12 +285,16 @@ const colors = {
     "editorGutter.modifiedBackground": GIT_MODIFIED + GUTTER,
     "editorGutter.deletedBackground": GIT_DELETED + GUTTER,
 
+    "editorWhitespace.foreground": DARK_2,
+    //"editor.lineHighlightBackground": DARK_1,
+    "editor.lineHighlightBorder": DARK_1,
+
     "editor.background": DARK_0,
     "editorCursor.foreground": LIGHT_0,
     "editorBracketMatch.background": ACCENT + MINOR_HIGHLIGHT,
     "editorBracketMatch.border": ACCENT_BRIGHT,
     "editorGroup.dropBackground": DARK_1 + DROP,
-    "editorIndentGuide.background": BORDER + INACTIVE_HIGHLIGHT,
+    "editorIndentGuide.background": DARK_2,
     "editorIndentGuide.activeBackground": BORDER,
     //"editorError.foreground": ERROR,
 
@@ -300,6 +306,25 @@ const colors = {
     "editor.findMatchBackground": FIND_MATCH + ACTIVE_HIGHLIGHT,
     "editor.findMatchHighlightBackground": FIND_MATCH + INACTIVE_HIGHLIGHT,
     "editor.foldBackground": LIGHT_0 + MINOR_HIGHLIGHT,
+
+    "editorSuggestWidget.background": DARK_0,
+    "editorSuggestWidget.border": BORDER,
+    "editorSuggestWidget.foreground": LIGHT_0,
+    "editorSuggestWidget.highlightForeground": ACCENT_BRIGHT,
+    "editorSuggestWidget.selectedBackground": SELECTION + ACTIVE_HIGHLIGHT,
+
+    "editorHoverWidget.background": DARK_0,
+    "editorHoverWidget.statusBarBackground": DARK_0,
+    "editorHoverWidget.border": BORDER,
+    "editorHoverWidget.foreground": LIGHT_0,
+
+    "peekView.border": ACCENT,
+    "peekViewEditor.background": ACCENT + PEEK_HIGHLIGHT,
+    "peekViewTitle.background": ACCENT + PEEK_HIGHLIGHT,
+    "peekViewTitleLabel.foreground": LIGHT_0,
+    "peekViewTitleDescription.foreground": LIGHT_0, // filepath
+    "peekViewResult.background": DARK_0,
+    "peekViewResult.selectionBackground": SELECTION + ACTIVE_HIGHLIGHT,
 
     "minimap.background": DARK_1,
     "minimapSlider.background": ACCENT + SCROLLBAR_HOVER,

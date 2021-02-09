@@ -1,3 +1,10 @@
+#### 0.2.3
+
+- Correct color of enum member as function default argument
+- Add editor widget colors, peek view colors
+- Tweak editor gray element colors
+- Boost color LILAC, RED_1
+
 #### 0.2.2
 
 - Improved Python, Markdown support
