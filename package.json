@@ -5,7 +5,7 @@
 	"categories": [
 		"Themes"
 	],
-	"description": "Another dark theme for Visual Studio Code",
+	"description": "A minimally colorful theme inspired by the album art of Yoen Waso Emaki",
 	"contributes": {
 		"themes": [
 			{
@@ -29,8 +29,10 @@
 		"color": "161a11",
 		"theme": "dark"
 	},
+	"icon": "icon.png",
 	"keywords": [
-		"standard",
+		"oriental",
+		"colorful",
 		"simple",
 		"clean",
 		"red",
