@@ -1,3 +1,12 @@
+#### 0.2.4
+
+- Change color of Markdown heading: now only the `#` are YELLOW, consistent with setext headers
+- Change color of Markdown fenced block language to YELLOW to keep palette clean; AQUA had no semantic meaning anyways
+- Add Markdown separator, bold text, italic text color and style
+- Add C++ sizeof, alignof, alignas color
+- Add JavaScript typeof, in color
+- Add scope "Parameter". Currently has the same color as "Source" (no effect)
+
 #### 0.2.3
 
 - Correct color of enum member as function default argument

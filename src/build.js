@@ -48,13 +48,40 @@ const tokenColors = [
             "source",
             "entity.name.function.call.initializer",// member name of class member initialization list
             "entity.name.type.parameter.cpp", // enum member as default argument
+            "entity.name.scope-resolution", // namespace
+            "variable",
             
             // markdown
-            "meta.paragraph"
+            "meta.paragraph",
+            "entity.name.section", // markdown heading
         ],
         "settings":
         {
             "foreground": BONE
+        }
+    },
+    {
+        "name": "Italic",
+        "scope": [
+            "markup.italic",
+            "punctuation.definition.italic",
+        ],
+        "settings":
+        {
+            "foreground": BONE,
+            "fontStyle": "italic",
+        }
+    },
+    {
+        "name": "Bold",
+        "scope": [
+            "markup.bold",
+            "punctuation.definition.bold",
+        ],
+        "settings":
+        {
+            "foreground": BONE,
+            "fontStyle": "bold",
         }
     },
     {
@@ -77,7 +104,7 @@ const tokenColors = [
             "storage.modifier.pointer",// "*" of pointer
             "storage.modifier.reference",// "&" of reference
 
-            //js            
+            // javascript
             "meta.brace",
         ],
         "settings":
@@ -86,16 +113,30 @@ const tokenColors = [
         }
     },
     {
-        "name": "Keyword and Macro",
+        "name": "Parameter",
+        "scope": [
+            "variable.parameter",
+        ],
+        "settings":
+        {
+            "foreground": BONE
+        }
+    },
+    {
+        "name": "Keyword, Storage and Macro",
         "scope": [
             "keyword",
             "keyword.operator.cast",
             "keyword.operator.delete",
             "keyword.operator.new",
-            "storage",
+            "keyword.operator.sizeof",
+            "keyword.operator.alignof",
+            "keyword.operator.alignas",
             "constant.language",
             "variable.language.this",
             "entity.other.attribute",
+
+            "storage",
 
             "meta.preprocessor",// "once" of "pragma once"
             "punctuation.definition.directive",// "#" of preprocessor directive
@@ -104,6 +145,10 @@ const tokenColors = [
             // python
             "variable.language.special.self",
             "variable.parameter.function.language.special.self",
+
+            // javascript
+            "keyword.operator.expression.typeof",
+            "keyword.operator.expression.in",
         ],
         "settings":
         {
@@ -111,12 +156,10 @@ const tokenColors = [
         }
     },
     {
-        "name": "Type: class and struct",
+        "name": "Type",
         "scope": [
             "entity.name.type",
-
-            // python
-            "support.type.python",
+            "support.type",
         ],
         "settings":
         {
@@ -142,7 +185,7 @@ const tokenColors = [
             "keyword.other.unit.suffix",
             "string",
             "constant.character",
-            "constant.other.placeholder",//"%d" of printf
+            "constant.other", // e.g. "%d" of printf (constant.other.placeholder)
             "punctuation.definition.string",// "<>" of preprocessor directive
 
             // markdown
@@ -165,10 +208,10 @@ const tokenColors = [
         }
     },
     {
-        "name": "json Property",
+        "name": "Json Property",
         "scope": [
-            "support.type",
-            "punctuation.support.type"//quotes of json property
+            "support.type.property-name",
+            "punctuation.support.type.property-name" // quotes of json property
         ],
         "settings":
         {
@@ -176,10 +219,10 @@ const tokenColors = [
         }
     },
     {
-        "name": "Markdown Header",
+        "name": "Markdown Heading",
         "scope": [
-            "entity.name.section",
-            "punctuation.definition.heading"
+            "punctuation.definition.heading", // "#" of markdown heading
+            "markup.heading.setext", // "===" heading
         ],
         "settings":
         {
@@ -193,22 +236,22 @@ const tokenColors = [
         ],
         "settings":
         {
-            "foreground": AQUA
+            "foreground": YELLOW
+        }
+    },
+    {
+        "name": "Markdown Separator",
+        "scope": [
+            "meta.separator"
+        ],
+        "settings":
+        {
+            "foreground": LIGHT_OLIVE
         }
     },
 
-    // {"name":"Built-in constant","scope":"constant.language","settings":{"foreground":"#f280d0"}},
-    // {"name":"User-defined constant","scope":["constant.character","constant.other"],"settings":{"foreground":"#f280d0"}},
-    // {"name":"Variable","scope":"variable","settings":{"fontStyle":""}},
-    // {"name":"Storage","scope":"storage","settings":{"fontStyle":"","foreground":"#225588"}},
-    // {"name":"Storage type","scope":"storage.type","settings":{"fontStyle":"italic","foreground":"#9966b8"}},
-    // {"name":"Class name","scope":["entity.name.class","entity.name.type","entity.name.namespace","entity.name.scope-resolution"],"settings":{"fontStyle":"underline","foreground":"#ffeebb"}},
-    // {"name":"Inherited class","scope":"entity.other.inherited-class","settings":{"fontStyle":"italic underline","foreground":"#ddbb88"}},
-    // {"name":"Function name","scope":"entity.name.function","settings":{"fontStyle":"","foreground":"#ddbb88"}},
-    // {"name":"Function argument","scope":"variable.parameter","settings":{"fontStyle":"italic","foreground":"#2277ff"}},
     // {"name":"Tag name","scope":"entity.name.tag","settings":{"fontStyle":"","foreground":"#225588"}},
     // {"name":"Tag attribute","scope":"entity.other.attribute-name","settings":{"fontStyle":"","foreground":"#ddbb88"}},
-    // {"name":"Library function","scope":"support.function","settings":{"fontStyle":"","foreground":"#9966b8"}},
     // {"name":"Library constant","scope":"support.constant","settings":{"fontStyle":"","foreground":"#9966b8"}},
     // {"name":"Library class/type","scope":["support.type","support.class"],"settings":{"fontStyle":"italic","foreground":"#9966b8"}},
     // {"name":"Library variable","scope":"support.other.variable","settings":{"fontStyle":""}},
@@ -218,13 +261,10 @@ const tokenColors = [
     // {"name":"diff: deleted","scope":"markup.deleted","settings":{"fontStyle":"","foreground":"#dc322f"}},
     // {"name":"diff: changed","scope":"markup.changed","settings":{"fontStyle":"","foreground":"#cb4b16"}},
     // {"name":"diff: inserted","scope":"markup.inserted","settings":{"foreground":"#219186"}},{"name":"Markup Quote","scope":"markup.quote","settings":{"foreground":"#22aa44"}},
-    // {"name":"Markup Styling","scope":["markup.bold","markup.italic"],"settings":{"foreground":"#22aa44"}},
-    // {"name":"Markup Inline","scope":"markup.inline.raw","settings":{"fontStyle":"","foreground":"#9966b8"}},
-    // {"name":"Markup Setext Header","scope":"markup.heading.setext","settings":{"fontStyle":"","foreground":"#ddbb88"}}
 ]
 
 const colors = {
-    // "focusBorder":"#596F99","input.background":"#181f2f","inputOption.activeBorder":"#1D4A87","inputValidation.infoBorder":"#384078","inputValidation.infoBackground":"#051336","inputValidation.warningBackground":"#5B7E7A","inputValidation.warningBorder":"#5B7E7A","inputValidation.errorBackground":"#A22D44","inputValidation.errorBorder":"#AB395B","badge.background":"#0063a5","progressBar.background":"#0063a5","dropdown.background":"#181f2f","button.background":"#2B3C5D","list.activeSelectionBackground":"#08286b","list.focusBackground":"#08286b","list.hoverBackground":"#061940","list.inactiveSelectionBackground":"#152037","list.dropBackground":"#041D52","list.highlightForeground":"#0063a5","scrollbar.shadow":"#515E91AA","scrollbarSlider.activeBackground":"#3B3F5188","scrollbarSlider.background":"#1F2230AA","scrollbarSlider.hoverBackground":"#3B3F5188","editorWidget.background":"#262641","editorCursor.foreground":"#ddbb88","editorWhitespace.foreground":"#103050","editor.lineHighlightBackground":"#082050","editor.selectionBackground":"#770811","editorIndentGuide.background":"#002952","editorIndentGuide.activeBackground":"#204972","editorHoverWidget.background":"#000c38","editorHoverWidget.border":"#004c18","editorLineNumber.foreground":"#406385","editorLineNumber.activeForeground":"#80a2c2","editorMarkerNavigation.background":"#060621","editorMarkerNavigationError.background":"#AB395B","editorMarkerNavigationWarning.background":"#5B7E7A","editorLink.activeForeground":"#0063a5","editor.findMatchHighlightBackground":"#eeeeee44","peekViewResult.background":"#060621","peekViewEditor.background":"#10192c","peekViewTitle.background":"#10192c","peekView.border":"#2b2b4a","peekViewEditor.matchHighlightBackground":"#eeeeee33","peekViewResult.matchHighlightBackground":"#eeeeee44","diffEditor.insertedTextBackground":"#31958A55","diffEditor.removedTextBackground":"#892F4688","minimap.selectionHighlight":"#750000","titleBar.activeBackground":"#10192c","editorGroup.border":"#2b2b4a","editorGroup.dropBackground":"#25375daa","editorGroupHeader.tabsBackground":"#1c1c2a","tab.border":"#2b2b4a","tab.inactiveBackground":"#10192c","activityBar.background":"#051336","panel.border":"#2b2b4a","sideBar.background":"#060621","sideBarSectionHeader.background":"#10192c","statusBar.background":"#10192c","statusBar.noFolderBackground":"#10192c","statusBar.debuggingBackground":"#10192c","statusBarItem.remoteBackground":"#0063a5","statusBarItem.prominentBackground":"#0063a5","statusBarItem.prominentHoverBackground":"#0063a5dd","debugToolBar.background":"#051336","debugExceptionWidget.background":"#051336","debugExceptionWidget.border":"#AB395B","pickerGroup.border":"#596F99","pickerGroup.foreground":"#596F99","extensionButton.prominentBackground":"#5f8b3b","extensionButton.prominentHoverBackground":"#5f8b3bbb","terminal.ansiBlack":"#111111","terminal.ansiRed":"#ff9da4","terminal.ansiGreen":"#d1f1a9","terminal.ansiYellow":"#ffeead","terminal.ansiBlue":"#bbdaff","terminal.ansiMagenta":"#ebbbff","terminal.ansiCyan":"#99ffff","terminal.ansiWhite":"#cccccc","terminal.ansiBrightBlack":"#333333","terminal.ansiBrightRed":"#ff7882","terminal.ansiBrightGreen":"#b8f171","terminal.ansiBrightYellow":"#ffe580","terminal.ansiBrightBlue":"#80baff","terminal.ansiBrightMagenta":"#d778ff","terminal.ansiBrightCyan":"#78ffff","terminal.ansiBrightWhite":"#ffffff"
+    // "input.background":"#181f2f","inputOption.activeBorder":"#1D4A87","inputValidation.infoBorder":"#384078","inputValidation.infoBackground":"#051336","inputValidation.warningBackground":"#5B7E7A","inputValidation.warningBorder":"#5B7E7A","inputValidation.errorBackground":"#A22D44","inputValidation.errorBorder":"#AB395B","progressBar.background":"#0063a5","list.highlightForeground":"#0063a5","scrollbar.shadow":"#515E91AA","editorWidget.background":"#262641","editorMarkerNavigation.background":"#060621","editorMarkerNavigationError.background":"#AB395B","editorMarkerNavigationWarning.background":"#5B7E7A","editorLink.activeForeground":"#0063a5","peekViewEditor.matchHighlightBackground":"#eeeeee33","peekViewResult.matchHighlightBackground":"#eeeeee44","editorGroup.border":"#2b2b4a","editorGroupHeader.tabsBackground":"#1c1c2a","statusBarItem.remoteBackground":"#0063a5","statusBarItem.prominentBackground":"#0063a5","statusBarItem.prominentHoverBackground":"#0063a5dd","debugToolBar.background":"#051336","debugExceptionWidget.background":"#051336","debugExceptionWidget.border":"#AB395B","extensionButton.prominentBackground":"#5f8b3b","extensionButton.prominentHoverBackground":"#5f8b3bbb",
 
     // activity bar active icon
     // sidebar text and symbol
@@ -293,6 +333,7 @@ const colors = {
     "editorCursor.foreground": LIGHT_0,
     "editorBracketMatch.background": ACCENT + MINOR_HIGHLIGHT,
     "editorBracketMatch.border": ACCENT_BRIGHT,
+    "editorGroup.border": DARK_1,
     "editorGroup.dropBackground": DARK_1 + DROP,
     "editorIndentGuide.background": DARK_2,
     "editorIndentGuide.activeBackground": BORDER,
@@ -378,8 +419,8 @@ const colors = {
     "statusBar.noFolderBackground": DARK_1,
     "statusBar.background": DARK_1,
     "statusBar.foreground": LIGHT_0,
-    "statusBar.debuggingBackground": LIGHT_0,
-    "statusBar.debuggingForeground": DARK_1,
+    "statusBar.debuggingBackground": DARK_1,
+    "statusBar.debuggingForeground": LIGHT_0,
 
     // Git
     "gitDecoration.untrackedResourceForeground": GIT_ADDED,
