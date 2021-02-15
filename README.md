@@ -14,11 +14,11 @@ Mainly for my own C/C++ programming.
 
 #### C++
 
-![cpp.png](screenshot/cpp.png "C++")
+![cpp.png](https://raw.githubusercontent.com/joshvictor1024/wagaku-theme/master/screenshot/cpp.png "C++")
 
 #### Python
 
-![py.png](screenshot/py.png "Python")
+![py.png](https://raw.githubusercontent.com/joshvictor1024/wagaku-theme/master/screenshot/py.png "Python")
 
 ## Features
 
