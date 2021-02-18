@@ -6,6 +6,7 @@
 - Add C++ sizeof, alignof, alignas color
 - Add JavaScript typeof, in color
 - Add scope "Parameter". Currently has the same color as "Source" (no effect)
+- Separate scope "Punctuation" and "Operator". Currently share the same color (no effect)
 
 #### 0.2.3
 

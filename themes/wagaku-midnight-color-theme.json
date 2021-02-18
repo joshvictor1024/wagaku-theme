@@ -49,17 +49,33 @@
             }
         },
         {
-            "name": "Punctuation and Operator",
+            "name": "Punctuation",
             "scope": [
                 "punctuation",
-                "keyword.operator",
-                "entity.name.function.operator",
                 "storage.modifier.pointer",
                 "storage.modifier.reference",
                 "meta.brace"
             ],
             "settings": {
                 "foreground": "#D2D4CE"
+            }
+        },
+        {
+            "name": "Operator",
+            "scope": [
+                "keyword.operator"
+            ],
+            "settings": {
+                "foreground": "#D2D4CE"
+            }
+        },
+        {
+            "name": "Overloaded Operator",
+            "scope": [
+                "entity.name.function.operator"
+            ],
+            "settings": {
+                "foreground": "#E2C200"
             }
         },
         {

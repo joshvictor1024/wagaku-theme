@@ -96,11 +96,9 @@ const tokenColors = [
         }
     },
     {
-        "name": "Punctuation and Operator",
+        "name": "Punctuation",
         "scope": [
             "punctuation",
-            "keyword.operator",
-            "entity.name.function.operator",//overloaded operator
             "storage.modifier.pointer",// "*" of pointer
             "storage.modifier.reference",// "&" of reference
 
@@ -110,6 +108,26 @@ const tokenColors = [
         "settings":
         {
             "foreground": LIGHT_OLIVE
+        }
+    },
+    {
+        "name": "Operator",
+        "scope": [
+            "keyword.operator",
+        ],
+        "settings":
+        {
+            "foreground": LIGHT_OLIVE
+        }
+    },
+    {
+        "name": "Overloaded Operator",
+        "scope": [
+            "entity.name.function.operator",
+        ],
+        "settings":
+        {
+            "foreground": YELLOW
         }
     },
     {
