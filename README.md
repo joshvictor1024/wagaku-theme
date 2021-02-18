@@ -28,4 +28,4 @@ Mainly for my own C/C++ programming.
 
 ## Build
 
-run `node ./build.js` (Node.js required)
+run `node src/build.js` (Node.js required)
