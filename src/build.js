@@ -127,7 +127,7 @@ const tokenColors = [
         ],
         "settings":
         {
-            "foreground": YELLOW
+            "foreground": LIGHT_OLIVE
         }
     },
     {

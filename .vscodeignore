@@ -1,0 +1,9 @@
+*.vsix
+.vscode/*.*
+icon/*.*
+screenshot/*.*
+src/*.*
+themes/old-wagaku-dusk-color-theme.json
+themes/old-wagaku-midnight-color-theme.json
+.gitignore
+TODO.md
