@@ -35,11 +35,14 @@ const ACCENT_BRIGHT = RED_1
 const BORDER = OLIVE
 const ERROR = LIGHT_RED;
 const SELECTION = RED_0;
-const FIND_MATCH = ORANGE
+const FIND_MATCH = AQUA
 const GIT_ADDED = AQUA
 const GIT_MODIFIED = YELLOW
-const GIT_DELETED = LIGHT_RED
+const GIT_DELETED = OLIVE
 const GIT_IGNORED = OLIVE
+const GIT_CONFLICT = LILAC
+const GIT_CURRENT = GIT_ADDED
+const GIT_INCOMING = GIT_CONFLICT
 
 const tokenColors = [
     {
@@ -107,7 +110,7 @@ const tokenColors = [
         ],
         "settings":
         {
-            "foreground": LIGHT_OLIVE
+            "foreground": BONE
         }
     },
     {
@@ -117,7 +120,7 @@ const tokenColors = [
         ],
         "settings":
         {
-            "foreground": LIGHT_OLIVE
+            "foreground": BONE
         }
     },
     {
@@ -127,7 +130,7 @@ const tokenColors = [
         ],
         "settings":
         {
-            "foreground": LIGHT_OLIVE
+            "foreground": BONE
         }
     },
     {
@@ -264,7 +267,7 @@ const tokenColors = [
         ],
         "settings":
         {
-            "foreground": LIGHT_OLIVE
+            "foreground": BONE
         }
     },
 
@@ -397,7 +400,14 @@ const colors = {
     //"minimapGutter.deletedBackground:": GIT_DELETED + GUTTER,
 
     "editorOverviewRuler.border": DARK_1, // vertical scrollbar border
+    "editorOverviewRuler.findMatchForeground": FIND_MATCH + GUTTER,
+    "editorOverviewRuler.rangeHighlightForeground": FIND_MATCH + GUTTER,
+    "editorOverviewRuler.selectionHighlightForeground": FIND_MATCH + GUTTER,
+    "editorOverviewRuler.wordHighlightForeground": LIGHT_0 + GUTTER, // read
+    "editorOverviewRuler.wordHighlightStrongForeground": LIGHT_0 + GUTTER, // write
     //"editorOverviewRuler.errorForeground": ERROR,
+    "editorOverviewRuler.bracketMatchForeground": ACCENT_BRIGHT + GUTTER,
+
     "scrollbarSlider.background": ACCENT + SCROLLBAR_PRESENT,
     "scrollbarSlider.hoverBackground": ACCENT + SCROLLBAR_HOVER,
     "scrollbarSlider.activeBackground": ACCENT + SCROLLBAR_ACTIVE,
@@ -448,10 +458,18 @@ const colors = {
     "gitDecoration.deletedResourceForeground": GIT_DELETED,
     "gitDecoration.stageDeletedResourceForeground": GIT_DELETED,
     "gitDecoration.ignoredResourceForeground": GIT_IGNORED,
+    "gitDecoration.conflictingResourceForeground": GIT_CONFLICT,
 
     "diffEditor.insertedTextBackground": GIT_ADDED + DIFF_HIGHLIGHT,
     "diffEditor.removedTextBackground": GIT_DELETED + DIFF_HIGHLIGHT,
     "diffEditor.diagonalFill": DARK_1,
+
+    "merge.currentHeaderBackground": GIT_CURRENT + TRANSPARENCY[2],
+    "merge.incomingHeaderBackground": GIT_INCOMING + TRANSPARENCY[2],
+    "merge.currentContentBackground": GIT_CURRENT + DIFF_HIGHLIGHT,
+    "merge.incomingContentBackground": GIT_INCOMING + DIFF_HIGHLIGHT,
+    // "editorOverviewRuler.currentContentForeground": ,
+    // "editorOverviewRuler.incomingContentForeground": ,
 
     // Settings
     "settings.modifiedItemIndicator": ACCENT,

@@ -57,7 +57,7 @@
                 "meta.brace"
             ],
             "settings": {
-                "foreground": "#D2D4CE"
+                "foreground": "#E5D7D8"
             }
         },
         {
@@ -66,7 +66,7 @@
                 "keyword.operator"
             ],
             "settings": {
-                "foreground": "#D2D4CE"
+                "foreground": "#E5D7D8"
             }
         },
         {
@@ -75,7 +75,7 @@
                 "entity.name.function.operator"
             ],
             "settings": {
-                "foreground": "#D2D4CE"
+                "foreground": "#E5D7D8"
             }
         },
         {
@@ -194,7 +194,7 @@
                 "meta.separator"
             ],
             "settings": {
-                "foreground": "#D2D4CE"
+                "foreground": "#E5D7D8"
             }
         }
     ],
@@ -224,7 +224,7 @@
         "editorLineNumber.activeForeground": "#e21339",
         "editorGutter.addedBackground": "#69D4E2B0",
         "editorGutter.modifiedBackground": "#E2C200B0",
-        "editorGutter.deletedBackground": "#FF94A4B0",
+        "editorGutter.deletedBackground": "#919985B0",
         "editorWhitespace.foreground": "#404533",
         "editor.lineHighlightBorder": "#2B3022",
         "editor.background": "#161A11",
@@ -240,8 +240,8 @@
         "editor.wordHighlightStrongBackground": "#E0E2DF1B",
         "editor.selectionBackground": "#960E27B0",
         "editor.selectionHighlightBackground": "#960E2780",
-        "editor.findMatchBackground": "#EA940BB0",
-        "editor.findMatchHighlightBackground": "#EA940B80",
+        "editor.findMatchBackground": "#69D4E2B0",
+        "editor.findMatchHighlightBackground": "#69D4E280",
         "editor.foldBackground": "#E0E2DF1B",
         "editorSuggestWidget.background": "#161A11",
         "editorSuggestWidget.border": "#919985",
@@ -264,10 +264,16 @@
         "minimapSlider.hoverBackground": "#960E2780",
         "minimapSlider.activeBackground": "#960E27B0",
         "minimap.selectionHighlight": "#960E27B0",
-        "minimap.findMatchHighlight": "#EA940BB0",
+        "minimap.findMatchHighlight": "#69D4E2B0",
         "minimapGutter.addedBackground": "#69D4E2B0",
         "minimapGutter.modifiedBackground": "#E2C200B0",
         "editorOverviewRuler.border": "#2B3022",
+        "editorOverviewRuler.findMatchForeground": "#69D4E2B0",
+        "editorOverviewRuler.rangeHighlightForeground": "#69D4E2B0",
+        "editorOverviewRuler.selectionHighlightForeground": "#69D4E2B0",
+        "editorOverviewRuler.wordHighlightForeground": "#E0E2DFB0",
+        "editorOverviewRuler.wordHighlightStrongForeground": "#E0E2DFB0",
+        "editorOverviewRuler.bracketMatchForeground": "#e21339B0",
         "scrollbarSlider.background": "#960E2768",
         "scrollbarSlider.hoverBackground": "#960E2780",
         "scrollbarSlider.activeBackground": "#960E27B0",
@@ -296,12 +302,17 @@
         "gitDecoration.addedResourceForeground": "#69D4E2",
         "gitDecoration.modifiedResourceForeground": "#E2C200",
         "gitDecoration.stageModifiedResourceForeground": "#E2C200",
-        "gitDecoration.deletedResourceForeground": "#FF94A4",
-        "gitDecoration.stageDeletedResourceForeground": "#FF94A4",
+        "gitDecoration.deletedResourceForeground": "#919985",
+        "gitDecoration.stageDeletedResourceForeground": "#919985",
         "gitDecoration.ignoredResourceForeground": "#919985",
+        "gitDecoration.conflictingResourceForeground": "#d1bae5",
         "diffEditor.insertedTextBackground": "#69D4E230",
-        "diffEditor.removedTextBackground": "#FF94A430",
+        "diffEditor.removedTextBackground": "#91998530",
         "diffEditor.diagonalFill": "#2B3022",
+        "merge.currentHeaderBackground": "#69D4E268",
+        "merge.incomingHeaderBackground": "#d1bae568",
+        "merge.currentContentBackground": "#69D4E230",
+        "merge.incomingContentBackground": "#d1bae530",
         "settings.modifiedItemIndicator": "#960E27"
     },
     "semanticHighlighting": false

@@ -42,7 +42,7 @@ If you prefer colored operators over them being a neutral color, you can modify 
     ],
     "settings":
     {
-        "foreground": "#E2C200" // by default "#D2D4CE", a light gray color
+        "foreground": "#E2C200" // by default "#E5D7D8" same as foreground color of "Source"
     }
 },
 ```

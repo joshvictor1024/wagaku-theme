@@ -1,3 +1,12 @@
+#### 0.2.5
+
+- Deprecate color LIGHT_OLIVE; use BONE for all punctuation and operators by default
+- Deprecate color ORANGE; use AQUA as find/match color (temporarily, may change)
+- Change GIT_DELETED to OLIVE, making "remove" color of `diffEditor` consistent with "deleted" color of `gitDecoration`
+- Add `gitDecoration` conflict color
+- Add `merge` conflict color
+- Add `editorOverviewRuler` color
+
 #### 0.2.4
 
 - Change color of Markdown heading: now only the `#` are YELLOW, consistent with setext headers
