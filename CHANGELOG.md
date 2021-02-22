@@ -1,5 +1,6 @@
 #### 0.2.5
 
+- Fix `name` field of file `themes/wagaku-midnight-color-theme.json`
 - Deprecate color LIGHT_OLIVE; use BONE for all punctuation and operators by default
 - Deprecate color ORANGE; use AQUA as find/match color (temporarily, may change)
 - Change GIT_DELETED to OLIVE, making "remove" color of `diffEditor` consistent with "deleted" color of `gitDecoration`

@@ -477,7 +477,7 @@ const colors = {
 
 const outFile = "themes/wagaku-midnight-color-theme.json"
 const all = {
-    "name": "Wagaku Test",
+    "name": "Wagaku Midnight",
     "tokenColors": tokenColors,
     "colors": colors,
     "semanticHighlighting": false

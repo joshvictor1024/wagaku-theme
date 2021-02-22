@@ -53,7 +53,9 @@ Overloaded and non-overloaded operators correspond to scope names `Overloaded Op
 
 Theme Wagaku began as (and probably will remain to be in the near future) a side project mainly for my own C++ programming. If you'd like other language covered, PR's are welcome though the current code base isn't in particularlly good shape.
 
-## Credit: Original Art
+## Credits
+
+### Original Art
 
 This theme is inspired by the album art of Yoen Waso Emaki (妖艶和奏絵巻)
 
