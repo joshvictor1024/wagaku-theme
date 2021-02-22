@@ -6,6 +6,7 @@ A minimally colorful theme with an oriental twist. If you enjoy Monokai, give Wa
 
 - Font: [Hack](https://sourcefoundry.org/hack/) 13px
 - Platform: Windows 10 (125% display scaling)
+- Icon Theme: [Chalice Icon Theme](https://marketplace.visualstudio.com/items?itemName=artlaman.chalice-icon-theme)
 
 #### C++
 

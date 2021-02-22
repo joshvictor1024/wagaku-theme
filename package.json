@@ -1,7 +1,7 @@
 {
 	"name": "theme-wagaku",
 	"displayName": "Theme Wagaku",
-	"version": "0.2.4",
+	"version": "0.2.5",
 	"categories": [
 		"Themes"
 	],
@@ -32,6 +32,7 @@
 	"icon": "icon.png",
 	"keywords": [
 		"oriental",
+		"minimal",
 		"colorful",
 		"simple",
 		"clean",
