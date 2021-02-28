@@ -1,7 +1,7 @@
 {
 	"name": "theme-wagaku",
 	"displayName": "Theme Wagaku",
-	"version": "0.2.5",
+	"version": "0.4.0",
 	"categories": [
 		"Themes"
 	],
@@ -13,8 +13,40 @@
 				"uiTheme": "vs-dark",
 				"path": "./themes/wagaku-midnight-color-theme.json"
 			}
-		]
+		],
+		"configuration": {
+			"type": "object",
+			"title": "Theme Wagaku",
+			"properties": {
+				"themeWagaku.operatorColor": {
+					"type": "string",
+					"default": "Punctuation",
+					"enum": [
+						"Punctuation",
+						"Keyword",
+						"Function"
+					],
+					"description": "Set textmate color of operators",
+					"scope": "window"
+				},
+				"themeWagaku.overloadedOperatorColor": {
+					"type": "string",
+					"default": "Punctuation",
+					"enum": [
+						"Punctuation",
+						"Keyword",
+						"Function"
+					],
+					"description": "Set textmate color of overloaded operators",
+					"scope": "window"
+				}
+			}
+		}
 	},
+	"activationEvents": [
+		"onStartupFinished"
+	],
+	"main": "./extension.js",
 	"author": "Josh Chuang",
 	"publisher": "josh-chuang",
 	"license": "MIT",

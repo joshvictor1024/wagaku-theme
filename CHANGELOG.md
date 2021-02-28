@@ -1,4 +1,12 @@
-#### 0.2.5
+#### 0.4.0
+
+- Add custom configuration to change syntax color for `Operator` and `Overloaded Operator`
+
+#### 0.3.1
+
+- Fix some `editorOverviewRuler` color
+
+#### 0.3.0
 
 - Fix `name` field of file `themes/wagaku-midnight-color-theme.json`
 - Deprecate color LIGHT_OLIVE; use BONE for all punctuation and operators by default

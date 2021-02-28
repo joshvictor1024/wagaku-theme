@@ -26,29 +26,43 @@ Wagaku features warm and rather high contrast colors, which may help with blue-l
 
 - UI: Neutral colors with a splash of red
 - Editor: No gazillion semantic colors, just four:
-  - Aqua: Language keywords and constants
+  - Aqua: Language keywords and control statements
   - Yellow: Functions
   - Mandarin: Types and classes
-  - Lilac: strings and literals
+  - Lilac: Strings and literals
 
-### Syntax Color for Operators
+## Modifications
 
-If you prefer colored operators over them being a neutral color, you can modify them directly in the file `theme/wagaku-midnight-color-theme.json` e.g. to give overloaded operators the same color as functions:
+There are custom configurations in `Settings` for overriding colors provided by the theme.
+
+|Name in `Settings`|Scope|Options|
+|---|---|---|
+|`Theme Wagaku: Operator Color`|(non-overloaded) operators|`Punctuation` (default): Punctuations and regular source code<br>`Keyword`: Language keywords and control statements<br>`Function`: Functions|
+|`Theme Wagaku: Overloaded Operator Color`|overloaded operators|(same as above)|
+
+### Manual Modifications
+
+The configurations basically modifies the `settings.json` file for you. If you want modifications other than those provided, you can always edit `settings.json` directly. Copy the corresponding section from `theme/wagaku-midnight-color-theme.json` to `settings.json` and edit those as desired. e.g. to change the color of overloaded operators to magenta (`#ff00ff`):
 
 ```json
-{
-    "name": "Overloaded Operator",
-    "scope": [
-        "entity.name.function.operator",
-    ],
-    "settings":
-    {
-        "foreground": "#E2C200" // by default "#E5D7D8" same as foreground color of "Source"
+// settings.json
+"editor.tokenColorCustomizations": {
+    "[Wagaku Midnight]": {            
+        "textMateRules": [
+            // Paste here
+            {
+                "name": "Overloaded Operator",
+                "scope": [
+                    "entity.name.function.operator"
+                ],
+                "settings": {
+                    "foreground": "#FF00FF" // Change color to magenta
+                }
+            }
+        ]
     }
 },
 ```
-
-Overloaded and non-overloaded operators correspond to scope names `Overloaded Operator` and `Operator` respectively.
 
 ## Language
 
