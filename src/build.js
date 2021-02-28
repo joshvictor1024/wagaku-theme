@@ -401,8 +401,8 @@ const colors = {
 
     "editorOverviewRuler.border": DARK_1, // vertical scrollbar border
     "editorOverviewRuler.findMatchForeground": FIND_MATCH + GUTTER,
-    "editorOverviewRuler.rangeHighlightForeground": FIND_MATCH + GUTTER,
-    "editorOverviewRuler.selectionHighlightForeground": FIND_MATCH + GUTTER,
+    "editorOverviewRuler.rangeHighlightForeground": LIGHT_0 + GUTTER,
+    "editorOverviewRuler.selectionHighlightForeground": SELECTION + GUTTER,
     "editorOverviewRuler.wordHighlightForeground": LIGHT_0 + GUTTER, // read
     "editorOverviewRuler.wordHighlightStrongForeground": LIGHT_0 + GUTTER, // write
     //"editorOverviewRuler.errorForeground": ERROR,
