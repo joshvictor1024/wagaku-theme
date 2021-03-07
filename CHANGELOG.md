@@ -1,3 +1,10 @@
+#### 0.4.1
+
+- Restructure repo directories
+  - Fix `README.md` build steps
+  - Exclude `.vscode/` from gitignore to include `launch.json`
+- Add `devDependencies` to `package.json`
+
 #### 0.4.0
 
 - Add custom configuration to change syntax color for `Operator` and `Overloaded Operator`

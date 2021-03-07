@@ -18,7 +18,7 @@ A minimally colorful theme with an oriental twist. If you enjoy Monokai, give Wa
 
 ## Build
 
-To build from source, clone this repository and run under root directory `node src/build.js` (using Node.js)
+To build from source, clone this repository and run under root directory `node script/build.js` and `node script/package.js`, which outputs a `vsix` package under `vsix/`.
 
 ## Colors
 

@@ -1,13 +1,2 @@
-*.vsix
-.vscode/*.*
-
-# source for screenshots
-*.h
-*.cpp
-*.py
-
-# Who would've thought you'd see paint.net here
-*.pdn
-
-icon/*.*
+vsix/*.*
 TODO.md

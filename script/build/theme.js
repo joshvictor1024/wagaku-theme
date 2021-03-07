@@ -475,7 +475,7 @@ const colors = {
     "settings.modifiedItemIndicator": ACCENT,
 }
 
-const outFile = "themes/wagaku-midnight-color-theme.json"
+const outFile = "dist/themes/wagaku-midnight-color-theme.json"
 const all = {
     "name": "Wagaku Midnight",
     "tokenColors": tokenColors,
