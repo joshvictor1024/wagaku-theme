@@ -76,8 +76,8 @@
 		"vsce": "^1.84.0"
 	},
 	"devDependencies": {
-		"node": "12.18.3",
-		"uglifyjs": "3.13.0"
+		"node": "^12.18.3",
+		"uglifyjs": "^3.13.0"
 	},
 	"__metadata": {
 		"id": "ddfcd9a4-e476-4090-984c-30da74b216c9",
