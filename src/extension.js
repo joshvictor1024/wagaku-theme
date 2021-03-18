@@ -1,3 +1,8 @@
+/**
+ *  Adapted from https://github.com/material-theme/vsc-material-theme/tree/master/src
+ *  See https://github.com/material-theme/vsc-material-theme/blob/master/LICENSE
+ */
+
 const vscode = require("vscode")
 
 /**

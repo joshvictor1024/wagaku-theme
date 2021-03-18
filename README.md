@@ -68,7 +68,11 @@ The configurations basically modifies the `settings.json` file for you. If you w
 
 Theme Wagaku began as (and probably will remain to be in the near future) a side project mainly for my own C++ programming. If you'd like other language covered, PR's are welcome though the current code base isn't in particularlly good shape.
 
-## Credits
+## Copyright
+
+### Code
+
+Essential parts of this project is adapted from existing theme [Dracula](https://github.com/dracula/visual-studio-code) and [Material Theme](https://github.com/material-theme/vsc-material-theme).
 
 ### Original Art
 
