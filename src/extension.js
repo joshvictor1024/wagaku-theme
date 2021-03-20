@@ -5,72 +5,86 @@
 
 const vscode = require("vscode")
 
+// TODO: directly read from package.json
+const DEFAULT_VALUE = {
+    "operatorColor" : "Punctuation",
+    "overloadedOperatorColor" : "Punctuation",
+};
+
+// TODO: directly read from package.json
+const THEME_SCOPE_NAME = {
+    "operatorColor" : "Operator",
+    "overloadedOperatorColor" : "Overloaded Operator",
+};
+
 /**
- * Get the color Hex string corresponding to @param config.
- * In case of invalid @param config, returns default ("Punctuation") value
- * @param {string} config - one of the possible config values in the configuration enum
+ * Get the color Hex string corresponding to `configName`.
+ * 
+ * On invalid `configName`, returns undefined
+ * On invalid config value of the setting, returns default value
+ * 
+ * @param {string} configName - specified in package.json
+ * e.g. for "themeWagaku.operatorColor" configName is "operatorColor"
  */
-function getColorFromConfig(config) {
+// TODO: directly read from package.json
+function getColorHexString(configName) {    
+    let settingValue = vscode.workspace.getConfiguration("themeWagaku").get(configName);
+    if (settingValue === undefined)
+        return undefined;
+    
     const COLOR = {
         "Punctuation": "#E5D7D8",
         "Keyword": "#69D4E2",
         "Function": "#E2C200",
     };
-    if ((config in COLOR) === false) {
-        // vscode.window.showErrorMessage(`Invalid Setting ${config}.`);
-        return COLOR["Punctuation"];
+    if ((settingValue in COLOR) === false) {
+        return COLOR[DEFAULT_VALUE[configName]];
     }
-    return COLOR[config];
+    return COLOR[settingValue];
 }
 
 /**
- * @param {Object} colors - A dictionary of { "textmateScopeName": "colorHexString"}
+ * Add non-existing or Update existing item in "editor.tokenColorCustomizations"
+ * 
+ * @param {string} configName - specified in package.json
+ * e.g. for "themeWagaku.operatorColor" configName is "operatorColor"
+ * @param {string} color - color hex string
  */
-function setEditorTokenTextmateColor(colors) {
+// known issue: both config show up even if only one is set
+function setConfig(configName, color) {
     try {
         // get current config, type WorkspaceConfiguration
         const currentTokenColor = vscode.workspace.getConfiguration().get("editor.tokenColorCustomizations");
         const currentTokenColorTextmate = vscode.workspace.getConfiguration().get("editor.tokenColorCustomizations.[Wagaku Midnight].textMateRules");
-
+        
         // convert part into type Array, perform modifications
-        modifiedTokenColorTextmate = (function(config){
-            var temp = Object.assign([], config); // explicitly convert to an Array
+        modifiedTokenColorTextmate = ((textmateConfig) => {
+            let textmateConfigAsArray = Object.assign([], textmateConfig); // explicitly convert to an Array
 
-            var hasScope = {};
-            for (const key in colors) {
-                hasScope[key] = false;
-            }
-
-            for (var item of temp) {
-                if (item.name in colors) {
-                    hasScope[item.name] = true;
-                    item.settings.foreground = colors[item.name];
+            let hasScope = false;
+            for (let item of textmateConfigAsArray) {
+                if (item["name"] === THEME_SCOPE_NAME[configName]) {
+                    hasScope = true;
+                    item["settings"]["foreground"] = color;
                 }
             }
-
-            for (const key in hasScope) {
-                if (hasScope[key] === false) {
-                    if (key === "Operator") {                    
-                        temp.push(Object.assign({},
-                            {
-                                ["name"]: key,
-                                ["scope"]: Object.assign([], ["keyword.operator"]),
-                                ["settings"]: Object.assign({}, {["foreground"]: colors[key]}),
-                            }
-                        ));
-                    }
-                    else if (key === "Overloaded Operator") {
-                        temp.push(Object.assign({},
-                            {
-                                ["name"]: key,
-                                ["scope"]: Object.assign([], ["entity.name.function.operator"]),
-                                ["settings"]: Object.assign({}, {["foreground"]: colors[key]}),
-                            }
-                        ));
-                    }
-                }
+            if (hasScope === false) {
+                const ITEM = {
+                    "operatorColor": {
+                        ["name"]: THEME_SCOPE_NAME["operatorColor"],
+                        ["scope"]: Object.assign([], ["keyword.operator"]),
+                        ["settings"]: Object.assign({}, {["foreground"]: color}),
+                    },
+                    "overloadedOperatorColor": {
+                        ["name"]: THEME_SCOPE_NAME["overloadedOperatorColor"],
+                        ["scope"]: Object.assign([], ["entity.name.function.operator"]),
+                        ["settings"]: Object.assign({}, {["foreground"]: color}),
+                    },
+                };
+                textmateConfigAsArray.push(Object.assign({}, ITEM[configName]));
             }
-            return temp;
+
+            return textmateConfigAsArray;
         })(currentTokenColorTextmate);
 
         // write modified part back to WorkspaceConfiguration object
@@ -89,45 +103,21 @@ function setEditorTokenTextmateColor(colors) {
                 )
             }
         );
-
         // update config with new WorkspaceConfiguration object
         vscode.workspace.getConfiguration().update("editor.tokenColorCustomizations", newTokenColor, true);
-
-        // const currentConfig = vscode.workspace.getConfiguration().get('workbench.colorCustomizations');
-        // config = Object.assign(
-        //     Object.assign(
-        //         {}, currentConfig
-        //     ),
-        //     {
-        //         [`[Wagaku Midnight]`]: Object.assign(
-        //             {}, {"foreground": "#ff00ff"}
-        //         )
-        //     }
-        // );
-        // vscode.workspace.getConfiguration().update('workbench.colorCustomizations', config, true);
-    }
-    catch (error) {
+    } catch (error) {
         vscode.window.showErrorMessage(error.message);
     }
 }
 
 function activate(context) {
     vscode.workspace.onDidChangeConfiguration(event => {
-        if (event.affectsConfiguration("themeWagaku.operatorColor") || event.affectsConfiguration("themeWagaku.overloadedOperatorColor")) {
-            
-            var colors = Object.assign({}, {
-                ["Operator"]: getColorFromConfig(vscode.workspace.getConfiguration("themeWagaku").get("operatorColor")),
-                ["Overloaded Operator"]: getColorFromConfig(vscode.workspace.getConfiguration("themeWagaku").get("overloadedOperatorColor")),
-            });
-            setEditorTokenTextmateColor(colors);
+        if (event.affectsConfiguration("themeWagaku.operatorColor")) {
+            setConfig("operatorColor", getColorHexString("operatorColor"))
+        }
+        if (event.affectsConfiguration("themeWagaku.overloadedOperatorColor")) {
+            setConfig("overloadedOperatorColor", getColorHexString("overloadedOperatorColor"))
         }
     });
 }
 exports.activate = activate;
-
-// function deactivate() {}
-
-// module.exports = {
-//     activate,
-//     deactivate
-// }
