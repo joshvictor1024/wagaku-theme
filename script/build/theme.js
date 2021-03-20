@@ -49,8 +49,8 @@ const tokenColors = [
         "name": "Source",
         "scope": [
             "source",
-            "entity.name.function.call.initializer",// member name of class member initialization list
-            "entity.name.type.parameter.cpp", // enum member as default argument
+            //"entity.name.function.call.initializer", // member name of class member initialization list
+            "variable.other.property",
             "entity.name.scope-resolution", // namespace
             "variable",
             
@@ -61,6 +61,16 @@ const tokenColors = [
         "settings":
         {
             "foreground": BONE
+        }
+    },
+    {
+        "name": "Tag",
+        "scope": [
+            "entity.name.tag",
+        ],
+        "settings":
+        {
+            "foreground": BONE,
         }
     },
     {
@@ -134,9 +144,11 @@ const tokenColors = [
         }
     },
     {
-        "name": "Parameter",
+        "name": "Parameter and Argument",
         "scope": [
             "variable.parameter",
+            //"entity.name.type.parameter.cpp", // enum member as default argument
+            "variable.other.enummember", // enum member as default argument
         ],
         "settings":
         {
@@ -153,7 +165,7 @@ const tokenColors = [
             "keyword.operator.sizeof",
             "keyword.operator.alignof",
             "keyword.operator.alignas",
-            "constant.language",
+            "constant.language", // e.g. true, nullptr
             "variable.language.this",
             "entity.other.attribute",
 
@@ -170,6 +182,7 @@ const tokenColors = [
             // javascript
             "keyword.operator.expression.typeof",
             "keyword.operator.expression.in",
+            "keyword.operator.expression.of",
         ],
         "settings":
         {
@@ -181,6 +194,16 @@ const tokenColors = [
         "scope": [
             "entity.name.type",
             "support.type",
+        ],
+        "settings":
+        {
+            "foreground": MANDARIN
+        }
+    },
+    {
+        "name": "Python decorators",
+        "scope": [
+            "punctuation.definition.decorator",
         ],
         "settings":
         {
@@ -219,13 +242,14 @@ const tokenColors = [
         }
     },
     {
-        "name": "Python decorators",
+        "name": "Markdown fenced block",
         "scope": [
-            "punctuation.definition.decorator",
+            "fenced_code.block.language",
+            "punctuation.definition.markdown", // "```" of fenced block
         ],
         "settings":
         {
-            "foreground": MANDARIN
+            "foreground": LILAC
         }
     },
     {
@@ -242,18 +266,9 @@ const tokenColors = [
     {
         "name": "Markdown Heading",
         "scope": [
+            "entity.name.section.markdown", // heading text
             "punctuation.definition.heading", // "#" of markdown heading
             "markup.heading.setext", // "===" heading
-        ],
-        "settings":
-        {
-            "foreground": YELLOW
-        }
-    },
-    {
-        "name": "Markdown fenced block language",
-        "scope": [
-            "fenced_code.block.language"
         ],
         "settings":
         {
@@ -271,7 +286,6 @@ const tokenColors = [
         }
     },
 
-    // {"name":"Tag name","scope":"entity.name.tag","settings":{"fontStyle":"","foreground":"#225588"}},
     // {"name":"Tag attribute","scope":"entity.other.attribute-name","settings":{"fontStyle":"","foreground":"#ddbb88"}},
     // {"name":"Library constant","scope":"support.constant","settings":{"fontStyle":"","foreground":"#9966b8"}},
     // {"name":"Library class/type","scope":["support.type","support.class"],"settings":{"fontStyle":"italic","foreground":"#9966b8"}},
