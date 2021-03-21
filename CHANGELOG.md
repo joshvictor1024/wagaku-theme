@@ -1,3 +1,16 @@
+#### 0.4.2
+
+- Tweak theme
+  - Change color of Markdown fenced block to LILAC to be consistent with inline strings
+  - Change some textmate scopes
+  - Add color for `of` operator of javascript
+- Add source for lint test
+- Restructured README
+  - Move screenshot to top
+  - Change some wording
+  - Add images for comparing modifications
+- Cleanup `extension.js`
+
 #### 0.4.1
 
 - Restructure repo directories

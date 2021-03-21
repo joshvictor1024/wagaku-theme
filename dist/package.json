@@ -1,7 +1,7 @@
 {
 	"name": "theme-wagaku",
 	"displayName": "Theme Wagaku",
-	"version": "0.4.1",
+	"version": "0.4.2",
 	"categories": [
 		"Themes"
 	],
@@ -51,7 +51,7 @@
 	"publisher": "josh-chuang",
 	"license": "MIT",
 	"engines": {
-		"vscode": "^1.52.0"
+		"vscode": "^1.54.0"
 	},
 	"repository": {
 		"type": "git",
